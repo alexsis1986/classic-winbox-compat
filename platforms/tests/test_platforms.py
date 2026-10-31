@@ -98,7 +98,7 @@ case "$1" in -s) echo "${CWC_OS:-Linux}";; -m) echo "${CWC_CPU:-x86_64}";; *) ex
         r=self.run_shell();self.assertNotEqual(r.returncode,0);self.assertIn('symlink',r.stdout)
     def test_credentials_arguments_rejected(self):
         r=self.run_shell(args=['127.0.0.1','admin','not-a-password']);self.assertNotEqual(r.returncode,0)
-        self.assertIn('not accepted',r.stdout);self.assertFalse(self.version_trace.exists())
+        self.assertIn('not accepted',r.stdout);self.assertFalse(self.trace.exists())
     def test_unknown_option_rejected(self):
         self.assertNotEqual(self.run_shell(args=['--force']).returncode,0)
     def test_linux_arm_rejected(self):
@@ -161,7 +161,7 @@ case "$1" in -s) echo "${CWC_OS:-Linux}";; -m) echo "${CWC_CPU:-x86_64}";; *) ex
     def test_payload_path_with_shell_metacharacters(self):
         new=self.base/'package $d "quotes" %u ; apostrophe\' brackets()'
         self.package.rename(new);self.package=new;self.runtime=new/'runtime';self.launch=self.runtime/'launch.sh';self.exe=self.runtime/'payload/winbox64.exe'
-        r=self.run_shell();self.assertEqual(r.returncode,0,r.stdout);self.assertIn('arg1='+str(self.exe)+'\n',self.trace.read_text())
+        r=self.run_shell();self.assertEqual(r.returncode,0,r.stdout);self.assertIn('arg1='+str(self.exe.resolve(strict=True))+'\n',self.trace.read_text())
     def setup_installer(self):
         for src,dest in [('linux-install.sh','Install.sh'),('WinBox.sh','WinBox.sh')]:
             (self.package/dest).write_text((ROOT/'templates'/src).read_text().replace(b.PAYLOAD_HASH,FIXHASH))
