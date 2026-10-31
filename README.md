@@ -4,6 +4,28 @@
 
 [🇷🇺 Русская версия](README.ru.md) · [Compatibility matrix](docs/COMPATIBILITY.md) · [Security](SECURITY.md) · [Credits / legal](docs/LEGAL.md) · [Changelog](CHANGELOG.md)
 
+<!-- CWC_DOWNLOADS_START -->
+## Downloads · Скачать
+
+**Choose your platform / Выберите платформу**
+
+| Platform | Download | Installation / Установка |
+| :--- | :--- | :--- |
+| **Windows 10/11 · x64** | **[Download Windows kit — v1.0.0](https://github.com/alexsis1986/classic-winbox-compat/releases/download/v1.0.0/ClassicWinBoxCompat-v1.0.0.zip)** | [English](README.md#windows-setup) · [Русский](README.ru.md#windows-setup) |
+| **Linux · x86-64** | **[Download Linux sources — Preview](https://github.com/alexsis1986/classic-winbox-compat/releases/download/platforms-source-v0.1.0-preview.1/ClassicWinBox343-PlatformSources-0.1.0-preview.1.zip)** | [English](https://github.com/alexsis1986/classic-winbox-compat/blob/main/platforms/docs/LINUX_EN.md) · [Русский](https://github.com/alexsis1986/classic-winbox-compat/blob/main/platforms/docs/LINUX_RU.md) |
+| **macOS · Intel / Apple Silicon** | **[Download macOS sources — Preview](https://github.com/alexsis1986/classic-winbox-compat/releases/download/platforms-source-v0.1.0-preview.1/ClassicWinBox343-PlatformSources-0.1.0-preview.1.zip)** | [English](https://github.com/alexsis1986/classic-winbox-compat/blob/main/platforms/docs/MACOS_EN.md) · [Русский](https://github.com/alexsis1986/classic-winbox-compat/blob/main/platforms/docs/MACOS_RU.md) |
+
+**Windows:** a local compatibility builder, not a ready-made EXE. Extract the kit and start with `01_BUILD_WINBOX.cmd`.
+
+**Linux and macOS:** both links download the **same source-only archive, 0.1.0-preview.1**. It contains launchers, a local packager and RU/EN guides — **not** a ready-to-run app, WinBox EXE or Wine. Supply your own compatible local EXE and install Wine separately; follow the guide for your system. This is not a native port. Actual WinBox/Wine GUI and router connections on these platforms are **not yet verified**. Apple Silicon requires a suitable Intel Wine/Rosetta setup as described in the macOS guide.
+
+**Release notes:** [Windows v1.0.0](https://github.com/alexsis1986/classic-winbox-compat/releases/tag/v1.0.0) · [Linux/macOS Preview](https://github.com/alexsis1986/classic-winbox-compat/releases/tag/platforms-source-v0.1.0-preview.1) · **[All releases](https://github.com/alexsis1986/classic-winbox-compat/releases)**
+
+[Platform overview](https://github.com/alexsis1986/classic-winbox-compat/blob/main/PLATFORMS.md) · [Rights and third-party notices](https://github.com/alexsis1986/classic-winbox-compat/blob/main/platforms/docs/RIGHTS_EN.md)
+
+---
+<!-- CWC_DOWNLOADS_END -->
+
 > [!IMPORTANT]
 > This project is **not affiliated with or endorsed by MikroTik**. This is a **local binary patcher**, **not a new WinBox client**, and it **does not distribute WinBox executables or MikroTik artwork**. If you need a supported administration tool, use the official WinBox 4.
 
@@ -26,6 +48,8 @@ The patch skips unsupported interface descriptors instead of adding full support
 | Later RouterOS releases | **Not tested or guaranteed** |
 
 The original patch author reports testing on a hAP ax³ with RouterOS 7.25. This is *upstream's claim*, **not** an independent lab certification by this project.
+
+<a id="windows-setup"></a>
 
 ## Quick start — Windows 10/11, 64-bit
 
