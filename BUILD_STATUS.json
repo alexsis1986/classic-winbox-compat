@@ -1,0 +1,21 @@
+{
+  "package_version": "1.0.0",
+  "date": "2026-10-31",
+  "status": "PUBLIC_SOURCE_READY_NOT_ROUTER_VALIDATED",
+  "bundled_executable": false,
+  "real_original_downloaded": false,
+  "real_executable_patched": false,
+  "windows_powershell_runtime_test": "ORIGINAL_LOCAL_KIT_OBSERVED; NEW_UPSTREAM_IMPORT_NOT_WINDOWS_TESTED",
+  "winbox_gui_test": "ORIGINAL_LOCAL_KIT_OBSERVED_BY_USER; PUBLISHED_VARIANT_NOT_TESTED",
+  "router_connection_test": "NOT_RUN",
+  "local_tests": {
+    "count": 59,
+    "passed": 59,
+    "scope": "Synthetic PE patching, file integrity, import parser, PowerShell text checks. Windows/RouterOS NOT tested for published importer."
+  },
+  "expected_input_sha256": "5b41cf51fd81e8d082687f6b522159cf4aba22e6df8edc486721d4e09507b6e9",
+  "expected_output_sha256": "ac40890431762b588a7b7777d1ad48c54751dbfa2a3868450222dce757ec496d",
+  "upstream_commit": "b22d97ee6fb222e14ff35151634bdac42a9f5d29",
+  "third_party_patches_distributed": false,
+  "upstream_patch_data_provisioning": "Locally imported at runtime from verified pinned upstream commit"
+}

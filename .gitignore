@@ -1,0 +1,33 @@
+# Never distribute MikroTik executables or copyrighted icon sprites
+*.exe
+*.dll
+*.png
+*.rif
+*.npk
+*.backup
+*.rsc
+*.key
+*.p12
+*.pfx
+*.pem
+
+# Generated/local user data
+WinBox3_Compat/
+logs/
+source/*.exe
+source/icons/*.png
+dist/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Third-party patch data are obtained locally at build time (not redistributed)
+patches.json
+source/*.json
+source/.*.tmp

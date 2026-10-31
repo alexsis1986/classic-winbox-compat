@@ -1,0 +1,46 @@
+PROVENANCE / SCOPE
+
+Package: WinBox3_343_ROS725_PatchKit 1.0.0
+Prepared: 2026-10-31
+
+Original product: MikroTik WinBox 3.43, Windows AMD64.
+The package does not contain a MikroTik executable, icon artwork, router
+configuration, passwords, a Windows runtime, or a RouterOS image.
+
+Binary patch-site values and the expected output digest are based on:
+https://github.com/rodenasl/winbox3-ros7-patch
+Pinned revision: b22d97ee6fb222e14ff35151634bdac42a9f5d29
+Upstream file: patch_winbox.py
+Upstream Git blob SHA-1: a2a92d01984e76c6ecd55f04b72d010b2981064b
+
+This package contains independently written PowerShell and Python builders,
+Windows launchers, tests, and documentation. It is not a new implementation
+of WinBox, an upstream release, or an official MikroTik product.
+The patch design is credited to its upstream author, rodenasl.
+No permission or support by MikroTik is claimed.
+
+No third-party patch bytes are distributed by the public project. On first
+local build, a fixed-revision upstream source file is downloaded as TEXT only,
+verified against its Git blob SHA-1 and a SHA-256 patch-site fingerprint, and
+parsed to source/patches.json (git-ignored; not redistributed).
+The downloaded Python program is NEVER executed by our scripts.
+The original WinBox executable is also downloaded only from MikroTik.
+
+The original-file SHA-256 was cross-checked against the MikroTik downloads
+page. The result SHA-256 is the upstream author's published expected value,
+not a hash of a locally generated real WinBox file in this session.
+
+PRIMARY SOURCES
+https://mikrotik.com/download/tools
+https://download.mikrotik.com/routeros/winbox/3.43/winbox64.exe
+https://forum.mikrotik.com/t/7-25-stable-is-released/273987
+https://github.com/rodenasl/winbox3-ros7-patch/blob/b22d97ee6fb222e14ff35151634bdac42a9f5d29/patch_winbox.py
+https://github.com/rodenasl/winbox3-ros7-patch/blob/b22d97ee6fb222e14ff35151634bdac42a9f5d29/README.md
+
+The separate forum project below was researched, but its EXE/ZIP was NOT
+obtained, executed, or included. Its CMR reports must not be confused with
+independent testing of this package:
+https://forum.mikrotik.com/t/winbox-3-for-ros-7-25/274093
+
+A checksum match establishes identity, not security. There is no full
+security audit, Windows execution test, or RouterOS hardware test here.
