@@ -36,7 +36,7 @@ jobs:
         run: |
           $tokens = $null
           $errors = $null
-          foreach ($file in @('WinBox-Toolkit.ps1',)) {
+          foreach ($file in @('WinBox-Toolkit.ps1')) {
             $tokens = $null; $errors = $null
             [void][System.Management.Automation.Language.Parser]::ParseFile((Join-Path $PWD $file), [ref]$tokens, [ref]$errors)
             if ($errors.Count -gt 0) { $errors | Format-List | Out-String | Write-Host; exit 1 }
