@@ -1,0 +1,6 @@
+﻿OPTIONAL LEGACY ICON SPRITES
+
+You may place your own icons.png, icons24.png and icons32.png here.
+All three should come from the same legacy WinBox cache directory.
+The builder also searches %APPDATA%\Mikrotik\Winbox\ automatically.
+No icon artwork is included in this archive.

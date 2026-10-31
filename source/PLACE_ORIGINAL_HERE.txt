@@ -1,0 +1,15 @@
+OPTIONAL OFFLINE INPUT
+
+Place the ORIGINAL MikroTik winbox64.exe version 3.43 x64 in this directory.
+Do not place a shortcut (.lnk), a 32-bit executable or a modified version.
+Then run 01_BUILD_WINBOX.cmd in the parent directory.
+
+Expected SHA-256:
+5b41cf51fd81e8d082687f6b522159cf4aba22e6df8edc486721d4e09507b6e9
+
+Official URL:
+https://download.mikrotik.com/routeros/winbox/3.43/winbox64.exe
+
+This directory deliberately contains no EXE in the distributed ZIP.
+
+The project also caches source/patches.json locally after importing pinned upstream text. This file is deliberately NOT distributed.

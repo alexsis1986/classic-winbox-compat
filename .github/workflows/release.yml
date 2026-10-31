@@ -1,0 +1,29 @@
+name: Release source-only kit
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Import pinned upstream metadata (not distributed)
+        run: python scripts/import_upstream.py
+      - name: Run synthetic unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Build ZIP with no WinBox executable or icons
+        run: python scripts/package_release.py --tag "$GITHUB_REF_NAME" --output "dist/ClassicWinBoxCompat-$GITHUB_REF_NAME.zip"
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME"             "dist/ClassicWinBoxCompat-$GITHUB_REF_NAME.zip"             "dist/ClassicWinBoxCompat-$GITHUB_REF_NAME.zip.sha256"             --title "Classic WinBox Compatibility $GITHUB_REF_NAME"             --notes-file CHANGELOG.md             --verify-tag

@@ -1,0 +1,65 @@
+test_32bit_pe_rejected (test_builder.ByteEngineTests.test_32bit_pe_rejected) ... ok
+test_all_replacements_exact (test_builder.ByteEngineTests.test_all_replacements_exact) ... ok
+test_bad_dos_header (test_builder.ByteEngineTests.test_bad_dos_header) ... ok
+test_bad_pe_offset (test_builder.ByteEngineTests.test_bad_pe_offset) ... ok
+test_bad_pe_signature (test_builder.ByteEngineTests.test_bad_pe_signature) ... ok
+test_checksum_bad_offset (test_builder.ByteEngineTests.test_checksum_bad_offset) ... ok
+test_checksum_field_omitted (test_builder.ByteEngineTests.test_checksum_field_omitted) ... ok
+test_checksum_matches_independent_calculation (test_builder.ByteEngineTests.test_checksum_matches_independent_calculation) ... ok
+test_checksum_odd_lengths_and_carries (test_builder.ByteEngineTests.test_checksum_odd_lengths_and_carries) ... ok
+test_checksum_overlap_rejected (test_builder.ByteEngineTests.test_checksum_overlap_rejected) ... ok
+test_damaged_site_rejected (test_builder.ByteEngineTests.test_damaged_site_rejected) ... ok
+test_double_patch_rejected (test_builder.ByteEngineTests.test_double_patch_rejected) ... ok
+test_fixture_is_not_real_winbox (test_builder.ByteEngineTests.test_fixture_is_not_real_winbox) ... ok
+test_full_pipeline_on_test_only_hashes (test_builder.ByteEngineTests.test_full_pipeline_on_test_only_hashes) ... ok
+test_input_size_mismatch (test_builder.ByteEngineTests.test_input_size_mismatch) ... ok
+test_length_preserved (test_builder.ByteEngineTests.test_length_preserved) ... ok
+test_no_other_bytes_changed (test_builder.ByteEngineTests.test_no_other_bytes_changed) ... ok
+test_original_preserved (test_builder.ByteEngineTests.test_original_preserved) ... ok
+test_output_hash_mismatch_is_rejected (test_builder.ByteEngineTests.test_output_hash_mismatch_is_rejected) ... ok
+test_production_boundary_rejects_synthetic (test_builder.ByteEngineTests.test_production_boundary_rejects_synthetic) ... ok
+test_wrong_optional_header (test_builder.ByteEngineTests.test_wrong_optional_header) ... ok
+test_atomic_publish_under_test_hash_only (test_builder.FileSafetyTests.test_atomic_publish_under_test_hash_only) ... ok
+test_existing_different_file_never_overwritten (test_builder.FileSafetyTests.test_existing_different_file_never_overwritten) ... ok
+test_identical_existing_file_retained (test_builder.FileSafetyTests.test_identical_existing_file_retained) ... ok
+test_invalid_cli_input_does_not_create_output (test_builder.FileSafetyTests.test_invalid_cli_input_does_not_create_output) ... ok
+test_no_force_argument (test_builder.FileSafetyTests.test_no_force_argument) ... ok
+test_same_input_output_rejected (test_builder.FileSafetyTests.test_same_input_output_rejected) ... BUILD STOPPED: Input and output must be different files.
+ok
+test_unverified_bytes_never_published (test_builder.FileSafetyTests.test_unverified_bytes_never_published) ... ok
+test_bad_upstream_blob_rejected (test_builder.ImportTests.test_bad_upstream_blob_rejected) ... ok
+test_git_blob_hash_has_content_length (test_builder.ImportTests.test_git_blob_hash_has_content_length) ... ok
+test_parse_site_table_from_pinned_data_without_code_execution (test_builder.ImportTests.test_parse_site_table_from_pinned_data_without_code_execution) ... ok
+test_pinned_patch_metadata_matches_importer (test_builder.ImportTests.test_pinned_patch_metadata_matches_importer) ... ok
+test_code_caves_fit_extended_text (test_builder.ManifestTests.test_code_caves_fit_extended_text) ... ok
+test_commit_is_pinned (test_builder.ManifestTests.test_commit_is_pinned) ... ok
+test_empty_table_rejected (test_builder.ManifestTests.test_empty_table_rejected) ... ok
+test_file_to_va_mapping (test_builder.ManifestTests.test_file_to_va_mapping) ... ok
+test_four_byte_hook_retains_fifth_zero (test_builder.ManifestTests.test_four_byte_hook_retains_fifth_zero) ... ok
+test_hooks_target_expected_caves (test_builder.ManifestTests.test_hooks_target_expected_caves) ... ok
+test_invalid_hex_rejected (test_builder.ManifestTests.test_invalid_hex_rejected) ... ok
+test_manifest_load (test_builder.ManifestTests.test_manifest_load) ... ok
+test_manifest_tampering_rejected (test_builder.ManifestTests.test_manifest_tampering_rejected) ... ok
+test_negative_offset_rejected (test_builder.ManifestTests.test_negative_offset_rejected) ... ok
+test_odd_hex_rejected (test_builder.ManifestTests.test_odd_hex_rejected) ... ok
+test_out_of_bounds_rejected (test_builder.ManifestTests.test_out_of_bounds_rejected) ... ok
+test_overlap_rejected (test_builder.ManifestTests.test_overlap_rejected) ... ok
+test_pinned_manifest_hash (test_builder.ManifestTests.test_pinned_manifest_hash) ... ok
+test_sites_fit_without_overlap (test_builder.ManifestTests.test_sites_fit_without_overlap) ... ok
+test_twenty_sites_and_twelve_groups (test_builder.ManifestTests.test_twenty_sites_and_twelve_groups) ... ok
+test_unequal_lengths_rejected (test_builder.ManifestTests.test_unequal_lengths_rejected) ... ok
+test_block_comment_is_closed (test_builder.WindowsStaticTests.test_block_comment_is_closed) ... ok
+test_build_launcher_does_not_run_exe (test_builder.WindowsStaticTests.test_build_launcher_does_not_run_exe) ... ok
+test_download_is_official_https_only (test_builder.WindowsStaticTests.test_download_is_official_https_only) ... ok
+test_launch_is_guarded_by_expected_hash (test_builder.WindowsStaticTests.test_launch_is_guarded_by_expected_hash) ... ok
+test_launchers_have_windows_line_endings (test_builder.WindowsStaticTests.test_launchers_have_windows_line_endings) ... ok
+test_no_unfilled_placeholders (test_builder.WindowsStaticTests.test_no_unfilled_placeholders) ... ok
+test_not_weakening_windows_security (test_builder.WindowsStaticTests.test_not_weakening_windows_security) ... ok
+test_windows_input_hash_matches (test_builder.WindowsStaticTests.test_windows_input_hash_matches) ... ok
+test_windows_manifest_hash_matches (test_builder.WindowsStaticTests.test_windows_manifest_hash_matches) ... ok
+test_windows_output_hash_matches (test_builder.WindowsStaticTests.test_windows_output_hash_matches) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 3.335s
+
+OK
