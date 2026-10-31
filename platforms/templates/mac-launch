@@ -1,0 +1,4 @@
+#!/bin/bash
+set -u
+ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/../Resources" && pwd -P) || exit 1
+exec /bin/bash "$ROOT/launch.sh" --gui

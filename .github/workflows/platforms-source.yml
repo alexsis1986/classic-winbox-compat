@@ -1,0 +1,80 @@
+name: Platform sources - test and publish preview
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'platforms/**'
+      - 'PLATFORMS.md'
+      - '.github/workflows/platforms-source.yml'
+  pull_request:
+    paths:
+      - 'platforms/**'
+      - 'PLATFORMS.md'
+      - '.github/workflows/platforms-source.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: platform-source-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  source-tests:
+    name: Source and mock tests (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # verified v4 commit
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # verified v5 commit
+        with:
+          python-version: '3.11'
+      - name: Audit allowlisted text-only sources
+        run: python3 platforms/build_packages.py --audit-source
+      - name: Run synthetic/mock tests - no EXE, Wine or upstream patch download
+        run: python3 -m unittest discover -s platforms/tests -v
+      - name: Build only the public source ZIP
+        run: python3 platforms/build_packages.py --source-only --out platforms/source-build
+
+  publish-source-preview:
+    needs: source-tests
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Build allowlisted source archive again from the tested commit
+        run: python3 platforms/build_packages.py --source-only --out platforms/source-build
+      - name: Create a separate pre-release without replacing v1.0.0 or existing assets
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          COMMIT: ${{ github.sha }}
+          TAG: platforms-source-v0.1.0-preview.1
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" --repo "$GH_REPO" >/dev/null 2>&1; then
+            echo 'This platform source release already exists; leaving it unchanged.'
+            exit 0
+          fi
+          ZIP='platforms/source-build/ClassicWinBox343-PlatformSources-0.1.0-preview.1.zip'
+          gh release create "$TAG" "$ZIP" "$ZIP.sha256" \
+            --repo "$GH_REPO" --target "$COMMIT" \
+            --title 'Linux/macOS launchers - source-only preview 0.1.0-preview.1' \
+            --notes-file platforms/RELEASE_NOTES.md --prerelease --latest=false

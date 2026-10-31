@@ -1,0 +1,25 @@
+CLASSIC WINBOX PLATFORM SOURCES — 0.1.0-preview.1
+
+Independent and unofficial. Not affiliated with or endorsed by MikroTik, WineHQ,
+Apple or GitHub. Names describe compatibility, not ownership or affiliation.
+
+Public source release: original wrapper/installer/packaging/test code and documentation
+only, under the scoped MIT LICENSE. No WinBox EXE, modified EXE, Wine runtime, fonts,
+vendor artwork, copied upstream patch code, machine-code patch data, router packages,
+credentials or saved sessions are supplied.
+
+The separately supplied local payload accepted by private packaging matches the existing
+Windows v1.0.0-compatible digest. The underlying patch research is credited to
+rodenasl/winbox3-ros7-patch, revision b22d97ee6fb222e14ff35151634bdac42a9f5d29.
+An explicit redistribution license for that revision was not recorded in the project's
+review. This platform source neither fetches nor includes it. Credit is not permission.
+
+Locally built packages may contain the user's EXE. They are NOT public source releases.
+No permission is asserted to modify, use or redistribute proprietary/third-party code.
+MIT covers only original project-authored sources, not any third-party component.
+See docs/RIGHTS_EN.md / docs/RIGHTS_RU.md. Local assembly is not a legal exemption.
+
+Modified EXEs do not retain a valid original vendor Authenticode signature. macOS app
+wrappers are unsigned and not notarized. Checksums and mock tests are not security or
+compatibility certifications. Real Wine GUI/router tests remain unverified. Keep official
+WinBox available; do not disable OS protections. Do not publish Wine profiles or secrets.
